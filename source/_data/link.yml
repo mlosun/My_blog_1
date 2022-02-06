@@ -1,26 +1,46 @@
 - class_name: 博客工具
   class_desc: 博客常用工具
   link_list:
-    - name: Hexo
-      link: https://hexo.io/zh-cn/
-      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
-      descr: 快速、简洁且高效的博客框架
     - name: Github
       link: https://github.com/
       avatar: https://github.com/fluidicon.png
       descr: 全球最大同性交友网站
-    - name: LeanCloud
-      link: https://leancloud.app/
-      avatar: https://www.leancloud.cn/favicon.svg
-      descr: 为产品开发提供强有力的后端支持
+    - name: Hexo
+      link: https://hexo.io/zh-cn/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 全网知名的静态博客框架
+    - name: Butterfly
+      link: https://butterfly.js.org/
+      avatar: https://butterfly.js.org/img/avatar.png
+      descr: Hexo优秀主题官方文档
+    - name: 谷歌搜索
+      link: https://www.google.com/
+      avatar: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fu.geelg.com%2Fi%2FKgVrHuRxGpvbaPW.gif&refer=http%3A%2F%2Fu.geelg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1646762872&t=9bb9d1d3631b4cd64fb94f9f22148466
+      descr: 谷歌搜索引擎
+    - name: 谷歌分析
+      link: https://analytics.google.com/
+      avatar: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fu.geelg.com%2Fi%2FKgVrHuRxGpvbaPW.gif&refer=http%3A%2F%2Fu.geelg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1646762872&t=9bb9d1d3631b4cd64fb94f9f22148466
+      descr: 谷歌网站统计分析
+    - name: 谷歌站长工具
+      link: https://www.google.com/webmasters/tools/home?hl=cn
+      avatar: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fu.geelg.com%2Fi%2FKgVrHuRxGpvbaPW.gif&refer=http%3A%2F%2Fu.geelg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1646762872&t=9bb9d1d3631b4cd64fb94f9f22148466
+      descr: 推送至Google搜索引擎
+    - name: 百度搜索
+      link: https://www.baidu.com/
+      avatar: http://static.home.baidu.com/homebd/gfjnkambdcileh1565603510.jpg?authorization=bce-auth-v1%2Fe6803def36ae467f81ebdb4bdc75f119%2F2019-08-12T09%3A51%3A50Z%2F-1%2F%2F5b436cdbe5a5f5ef86b452cf2b7649e1a1d434978659dd5cb14a3e1666c58d19
+      descr: 百度搜索引擎
+    - name: 百度统计
+      link: https://tongji.baidu.com/
+      avatar: http://static.home.baidu.com/homebd/gfjnkambdcileh1565603510.jpg?authorization=bce-auth-v1%2Fe6803def36ae467f81ebdb4bdc75f119%2F2019-08-12T09%3A51%3A50Z%2F-1%2F%2F5b436cdbe5a5f5ef86b452cf2b7649e1a1d434978659dd5cb14a3e1666c58d19
+      descr: 百度网站统计分析
+    - name: 百度站长平台
+      link: https://ziyuan.baidu.com/
+      avatar: http://static.home.baidu.com/homebd/gfjnkambdcileh1565603510.jpg?authorization=bce-auth-v1%2Fe6803def36ae467f81ebdb4bdc75f119%2F2019-08-12T09%3A51%3A50Z%2F-1%2F%2F5b436cdbe5a5f5ef86b452cf2b7649e1a1d434978659dd5cb14a3e1666c58d19
+      descr: 推送至百度搜索引擎
 
 - class_name: Butterfly
   class_desc: Butterfly主题优秀博客
   link_list:
-    - name: Butterfly
-      link: https://butterfly.js.org/
-      avatar: https://butterfly.js.org/img/avatar.png
-      descr: A Simple and Card UI Design theme for Hexo
     - name: MYW
       link: https://immyw.com/
       avatar: https://immyw.com/img/avatar.png
