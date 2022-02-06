@@ -1,0 +1,43 @@
+- class_name: 博客工具
+  class_desc: 博客常用工具
+  link_list:
+    - name: Hexo
+      link: https://hexo.io/zh-cn/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 快速、简洁且高效的博客框架
+    - name: Github
+      link: https://github.com/
+      avatar: https://github.com/fluidicon.png
+      descr: 全球最大同性交友网站
+    - name: LeanCloud
+      link: https://leancloud.app/
+      avatar: https://www.leancloud.cn/favicon.svg
+      descr: 为产品开发提供强有力的后端支持
+
+- class_name: Butterfly
+  class_desc: Butterfly主题优秀博客
+  link_list:
+    - name: Butterfly
+      link: https://butterfly.js.org/
+      avatar: https://butterfly.js.org/img/avatar.png
+      descr: A Simple and Card UI Design theme for Hexo
+    - name: MYW
+      link: https://immyw.com/
+      avatar: https://immyw.com/img/avatar.png
+      descr: 今日事,今日畢
+    - name: Heo
+      link: https://blog.zhheo.com/
+      avatar: https://blog.zhheo.com/img/avatar.png
+      descr: 爱折腾的设计师 
+    - name: 小康博客
+      link: https://www.antmoe.com/
+      avatar: https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/avatar.jpg
+      descr: 一个收藏回忆与分享技术的地方！
+    - name: Hassan's Blog
+      link: https://hassanwong.top
+      avatar: https://cdn.jsdelivr.net/gh/hassanblog/CDN/img/avatar_blog.jpg
+      descr: 时不我待，只争朝夕
+    - name: Sakura` Blogs
+      link: https://jinan6.vip
+      avatar: https://cdn.jsdelivr.net/gh/jinan6/PicGo-img/img/20200617192549.png
+      descr:  或苦或甜都不要辜负~

@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: 洛森笔记
+subtitle: 念念不忘，必有回响
+description: 念念不忘，必有回响
 keywords:
-author: John Doe
-language: en
-timezone: ''
+author: 洛森
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
