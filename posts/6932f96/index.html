@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>配置自己的工作环境5：使用Git进行工作文档的版本控制 | 洛森笔记</title><meta name="keywords" content="工作环境,Git"><meta name="author" content="洛森"><meta name="copyright" content="洛森"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="其实这个系列教程的缘由就是这一篇了。同时也附上参考链接玩转git,让git成为个人工作备份利器  开始正文！ Git是什么？前面说了那么多Git，但是Git到底是什么呢？百度百科 在程序员的世界里Git是一款自由和开源的分布式版本控制系统。但在这里我们不能这么说，因为这个系列的文章对象并非都是程序员，哪怕你不懂任何编程甚至于电脑小白。  Git是一款记录你工作的任何变动，并能保留每次工作结果的一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置自己的工作环境5：使用Git进行工作文档的版本控制">
+<meta property="og:url" content="https://blog.mlosun.com/posts/6932f96/index.html">
+<meta property="og:site_name" content="洛森笔记">
+<meta property="og:description" content="其实这个系列教程的缘由就是这一篇了。同时也附上参考链接玩转git,让git成为个人工作备份利器  开始正文！ Git是什么？前面说了那么多Git，但是Git到底是什么呢？百度百科 在程序员的世界里Git是一款自由和开源的分布式版本控制系统。但在这里我们不能这么说，因为这个系列的文章对象并非都是程序员，哪怕你不懂任何编程甚至于电脑小白。  Git是一款记录你工作的任何变动，并能保留每次工作结果的一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109210220204.png">
+<meta property="article:published_time" content="2014-05-06T05:25:00.000Z">
+<meta property="article:modified_time" content="2014-05-06T05:25:00.000Z">
+<meta property="article:author" content="洛森">
+<meta property="article:tag" content="工作环境">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109210220204.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.mlosun.com/posts/6932f96/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><meta name="baidu-site-verification" content="code-ySRqgzo6a7"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f9fad35287af3a6d60967c147e4e520f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-T3NTXMLE3V"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-T3NTXMLE3V');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":90,"position":"top","messagePrev":"本文更新于","messageNext":"天前, 文章的部分内容可能已经过时了。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '配置自己的工作环境5：使用Git进行工作文档的版本控制',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2014-05-06 13:25:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151548057.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109210220204.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">洛森笔记</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">配置自己的工作环境5：使用Git进行工作文档的版本控制</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2014-05-06T05:25:00.000Z" title="发表于 2014-05-06 13:25:00">2014-05-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2014-05-06T05:25:00.000Z" title="更新于 2014-05-06 13:25:00">2014-05-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/">瞎折腾</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>其实这个系列教程的缘由就是这一篇了。<br>同时也附上参考链接<a target="_blank" rel="noopener" href="http://www.cnblogs.com/dabaopku/archive/2012/01/09/2316772.html">玩转git,让git成为个人工作备份利器</a></p>
+</blockquote>
+<p>开始正文！</p>
+<h2 id="Git是什么？"><a href="#Git是什么？" class="headerlink" title="Git是什么？"></a>Git是什么？</h2><p>前面说了那么多Git，但是Git到底是什么呢？<a target="_blank" rel="noopener" href="http://baike.baidu.com/subview/1531489/12032478.htm">百度百科</a></p>
+<p>在程序员的世界里Git是一款自由和开源的分布式版本控制系统。但在这里我们不能这么说，因为这个系列的文章对象并非都是程序员，哪怕你不懂任何编程甚至于电脑小白。</p>
+<blockquote>
+<p>Git是一款记录你工作的任何变动，并能保留每次工作结果的一款项目管理神器！</p>
+</blockquote>
+<p>举个例子：</p>
+<blockquote>
+<p>你是一个编辑，老板让你写一份产品报告，终于在2014年5月1日完成了初稿 <code>产品报告.doc</code>，然后因为这个报告比较重要，于是完善一下有了<code>产品报告0502.doc</code>。然后提交给老板，老板说这里这里不好需要修改。于是你有了<code>产品报告0503.doc</code>，后来在老板和客户的英明指导下，你有了<code>产品报告0504.doc</code>、<code>产品报告0505.doc</code>、<code>产品报告（最终版）.doc</code>、<code>产品报告（最终版）新.doc</code>、<code>产品报告（最终版）0510.doc </code>、<code>产品报告（最终版）完成版.doc </code>…..</p>
+</blockquote>
+<blockquote>
+<p>到头来自己比谁都乱，每个版本都有一些资料想保留下来，但给老板和客户的又只有一份完成版。</p>
+</blockquote>
+<p>而使用Git，可以实现你始终只有一个<code>产品报告.doc</code>，并且每一次修改的时候都能记录下当时发生了什么事，并且每个版本都能和其他版本对比，增加了哪些内容，删减了哪些内容。并且能够随时恢复到任一版本，你的归档文件夹，始终只有这一份文档！</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我们只需要两款软件</p>
+<p>msysgit（<a target="_blank" rel="noopener" href="http://git-scm.com/">下载</a>）（如果你懂命令行，其实只需要这一款就够了）<br>TortoiseGit（<a target="_blank" rel="noopener" href="http://tortoisegit.org/">下载</a>）<br>msysgit 是Git核心的功能软件，而 TortoiseGit 是能够和Windows的资源管理器整合的图形化Git管理软件，</p>
+<p>知道了这些，接下来你的步骤是：</p>
+<ol>
+<li>下载这两款软件到本地</li>
+<li>首先安装 msysgit（顺序不要错了）</li>
+<li>再次安装 TortoiseGit（啥，你问我安装选项？除了安装路径两个软件全部一路默认好了）</li>
+<li>顺便下载 TortoiseGit 的中文语言包，并安装（和 TortoiseGit 下载页面在一起的，别说你找不到）</li>
+<li>安装好后在桌面点击鼠标右键，就会出现几个程序选项，如图：<br><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151719300.png"></li>
+<li>接下来打开 TortoiseGit &#x3D;&gt; Settings 选项，如图:<br><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151721990.png"></li>
+<li>修改语言为中文（在桌面再次鼠标右键打开，是不是都变成中文了？）</li>
+<li>修改Git.exe路径为你安装 msysgit 的bin文件夹</li>
+<li>配置Git环境完毕，是不是很简单？</li>
+</ol>
+<h2 id="Git工作流"><a href="#Git工作流" class="headerlink" title="Git工作流"></a>Git工作流</h2><p>在这里，主要说3个Git要点，并且依照这3个要点的顺序讲述如何使用Git进行工作，然后在根据一个实例来说明Git的使用：</p>
+<ul>
+<li>基础知识</li>
+<li>版本分支</li>
+<li>版本对比及还原</li>
+</ul>
+<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><p>首先我们在E盘的 <code>MyWork文件夹</code> 的图标上点击鼠标右键选择“Git在这里创建版本库”，弹出的对话框不用管直接点确定（复选框不要选），随后点击ok即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151723198.png"></p>
+<p>ok，一个版本库就创建出来了。刷新或重新打开E盘，你会发现文件夹上出现了一个绿色的对勾图标，说明这个文件夹已经受到了Git的版本控制。（这个图标的出现不一定实时，也许你要多刷新几次，甚至重启电脑才行）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151724071.png"></p>
+<blockquote>
+<p>当你将一个文件夹使用Git创建了版本库时，会在该文件夹下出现一个叫.git的隐藏文件夹，这个也是Git控制的一些数据，如果删除该隐藏文件夹，那么所有的Git记录和数据将丢失。你可以在文件夹选项中设置不显示隐藏文件。</p>
+</blockquote>
+<p>常见的图标及含义如下：</p>
+<ul>
+<li><p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151725270.png"><br>这个文件（夹）很干净，是最新版本文件</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151726121.png"><br>这个文件（夹）发生了修改，需要提交</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151726007.png"><br>这个文件（夹）要添加进版本库</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151727591.png"><br>这个文件（夹）没有在版本库中，需要添加进来（转为上一个图标的状态），或者忽略（转为下一个图标的状态）</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151727457.png"><br>这个文件（夹）被忽略，不受版本控制</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151727997.png"><br>这个文件(夹)里的内容发生冲突（这是最危险的情况，但是对于个人用户来说，几乎不会出现，出现的情况是两个人同时对一个文件做修改，后提交的人在更新时无法与前者完美融合时，这个不需要深入理解）</p>
+</li>
+</ul>
+<h3 id="版本分支"><a href="#版本分支" class="headerlink" title="版本分支"></a>版本分支</h3><p>接下来说说版本分支（Branch）。</p>
+<p>举个例子：</p>
+<blockquote>
+<p>你需要写一份商业策划，随后洋洋洒洒一大篇完成了这份商业策划。但突发灵感想修改一下商业策划，但又不知道是不是自己想要的，你就可以新建一个分支拷贝这份商业策划的所有资料进行修改。</p>
+</blockquote>
+<blockquote>
+<p>当修改完成后如果你满意，就可以将这个分支与原来的主分支（Master）合并（Merge），甚至直接代替主分支。如果你感觉越改越糟，就直接回到主分支工作，仿佛什么也没有发生一样（当然这个新的分支要通过某些复杂的操作来删除，你也可以留着，作为自己惨痛教训的警钟）。</p>
+</blockquote>
+<blockquote>
+<p>也就是说，分支为你提供了一个尝试某些新道路的空间。</p>
+</blockquote>
+<h3 id="版本对比及还原"><a href="#版本对比及还原" class="headerlink" title="版本对比及还原"></a>版本对比及还原</h3><p>还记得上一篇说的<code>提交commit</code>吗？</p>
+<p>每一次工作完成之后都需要执行 <code>提交commit</code>，所以Git就能够记录每一次提交时的文档状况，并且能够和任一一次提交的版本进行详细对比，并且能够恢复到任一版本的状态。</p>
+<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><p>我时常会使用到<code>wordpress</code>程序开发各种不同的网站，所以现在我就演示一个使用wordpress给一个朋友做摄影公司网站的项目管理案例。</p>
+<h3 id="创建-amp-提交"><a href="#创建-amp-提交" class="headerlink" title="创建&amp;提交"></a>创建&amp;提交</h3><p>首先新建一个文件夹叫 <code>wordpress</code>，我的策略是所有基于wordpress开发的程序都在这个文件夹里完成，使用不同的分支来区分不同的网站项目。</p>
+<p>右键将<code>wordpress</code>添加进版本库。并且添加一个文件夹叫做<code>README.md</code>，里面写上内容。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151727235.png"></p>
+<p>右键在文件夹内空白地方点击<code>Git提交 -&gt; &quot;master&quot;</code>表示向master分支提交工作内容。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151728019.png"></p>
+<blockquote>
+<p>如果你第一次提交，TortoiseGit会提示你设置用户名和电子邮箱，这是因为Git可以多用户协作，填写用户名和邮箱是为了区分每次工作的提交和修改时由谁进行的。</p>
+</blockquote>
+<p>弹出提交窗口，填写日志及勾选变更列表后点击确定（Git强制要求你写提交日志，否则不能提交，这也是一个好习惯）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151728282.png"></p>
+<p>ok，提交完成后你发现<code>README.md</code>文件签名的蓝色问号已经变为绿色对号了。</p>
+<p>再次，我们依照<code>README.md</code>里的规划，将master内的文件夹目录和内容准备好，就像平时操作文件夹一样。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151729213.png"></p>
+<p>我做了如下事情：</p>
+<ul>
+<li>修改了<code>README.md</code>文件，删除了一行<code> - Vcom：公司网站项目</code></li>
+<li>新建了 <code>WP</code> 、 <code>Theme</code> 、 <code>Plugin</code> 、 <code>Doning</code> 这几个文件夹</li>
+<li>下载wordpress3.9版本的源码，放入 <code>WP</code>文件夹</li>
+</ul>
+<p>再次提交：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151729406.png"></p>
+<p>刷新发现 <code>Doing</code>、 <code>Plugin</code>、 <code>Theme</code> 这三个文件夹前面还是蓝色问号。这是因为Git不允许提交空的文件夹，所以新建这三个空文件夹提交不成功。我们在这三个文件夹内都添加一个README.md文档再次提交就好了。刷新看下，全绿了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151731882.png"></p>
+<h3 id="版本差异化对比"><a href="#版本差异化对比" class="headerlink" title="版本差异化对比"></a>版本差异化对比</h3><p>ok，现在我突然想起来，我好像改变了版本库根目录下的README.md文件，但是又记不起来改变了什么内容，怎么办?</p>
+<p>我们在<code>README.md</code>文件上右键点击</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151731087.png"></p>
+<p>选择“与前一版本比较差异”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151731071.png"></p>
+<p>我们可以看到，在有变化的地方会被高亮显示。</p>
+<h3 id="版本还原"><a href="#版本还原" class="headerlink" title="版本还原"></a>版本还原</h3><p>考虑了一下，我们想回到之前的版本</p>
+<p>右键选择“TortoiseGit &#x3D;&gt; 显示日志”</p>
+<p>在日志列表选择想要恢复到的版本，右键点击看到</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151732328.png"></p>
+<p>有两种回到之前版本的方法，Reset 和 Revert ，他们的区别在于</p>
+<ul>
+<li>revert 是撤销某次操作，此次操作之前的commit都会被保留</li>
+<li>reset 是撤销某次提交，但是此次之后的修改都会被退回到暂存区</li>
+</ul>
+<p>在这里我们使用Revert。</p>
+<p>点击Revert后刷新发现，怎么 <code>Doing</code>、 <code>Plugin</code>、 <code>Theme</code>这三个文件夹还在，里面的 README.md 也还在。没错，这也是Git的聪明之处。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151732161.png"></p>
+<p>还记得我们之前的操作吗？看上面日志信息的那张图我们发现</p>
+<ul>
+<li>15:05 我们提交的内容：修改README.md文件、新建wordpress文件夹并放入内容</li>
+<li>15:11 我们提交的内容：新建 Doing、 Plugin、 Theme三个文件夹并放入文件README.md</li>
+</ul>
+<p>也就是说我们仅仅恢复了15:05分的操作，但15:11分的操作仍然存在。是不是很赞？<br>再次提交后我们查看日志信息</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151733389.png"></p>
+<p>新增一次提交的日志，并且在日志说明里可以看到是Revert，下面的文件里列表双击即可打开查看这次提交都变动了什么。</p>
+<p>下面我们将WP这个文件夹重新放入wordpress源码，并提交一次，来演示如何使用版本分支</p>
+<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><p>在文件夹内右键选择“TortoiseGit &#x3D;&gt; 创建分支”，取名为Moga</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151733273.png"></p>
+<p>再次文件夹内右键选择“TortoiseGit &#x3D;&gt; 切换&#x2F;检出”，切换到Moga分支</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151733423.png"></p>
+<p>文件没变化？是的，因为我们创建Moga分支的方法属于“克隆master主分支，并创建新分支”的方式，你也可以选择其他方式来创建分支。</p>
+<h3 id="切换与使用分支管理文件"><a href="#切换与使用分支管理文件" class="headerlink" title="切换与使用分支管理文件"></a>切换与使用分支管理文件</h3><p>由于上面我们已经切换到Moga分支了，接下来我们的操作只对Moga分支有影响。</p>
+<p>比如我们创建一个 <code>Moga.md</code> 文件，并提交</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109151734068.png"></p>
+<p>然后我们切换回master主分支出查看，并没有<code>Moga.md</code>这个文件，明白了吧！</p>
+<blockquote>
+<p>没错，版本分支就是这样去理解。和你复制整个版本库（包括所有的日志提交信息）没有区别。唯一不同的是你的文件夹目录结构更清爽了！</p>
+</blockquote>
+<p>ok，这篇耗时一下午的文章终于写完了。在以后的文章里我也会经常使用 Gif 和 TortoiseGit 。</p>
+<p>Git还有很多的小技巧，就留给以后再说吧。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">洛森</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.mlosun.com/posts/6932f96/">https://blog.mlosun.com/posts/6932f96/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.mlosun.com" target="_blank">洛森笔记</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/">工作环境</a><a class="post-meta__tags" href="/tags/Git/">Git</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109210220204.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/93ba44ca/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109210220204.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">配置自己的工作环境6：使用Github+hexo搭建静态博客</div></div></a></div><div class="next-post pull-right"><a href="/posts/3c2a4362/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109210220204.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">配置自己的工作环境4：创建你的电子工作台</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/fd0e95b0/" title="配置自己的工作环境1：序言"><img class="cover" src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109210220204.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2014-05-06</div><div class="title">配置自己的工作环境1：序言</div></div></a></div><div><a href="/posts/b2472a4e/" title="配置自己的工作环境2：重装个系统先"><img class="cover" src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109210220204.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2014-05-06</div><div class="title">配置自己的工作环境2：重装个系统先</div></div></a></div><div><a href="/posts/e1b8bbc5/" title="配置自己的工作环境3：Sublime Text 2 的安装与配置"><img class="cover" src="https://cdn.jsdelivr.net/gh/mlosun/cdn.mlosun.com/img/202109210220204.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2014-05-06</div><div class="title">配置自己的工作环境3：Sublime Text 2 的安装与配置</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">Git是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-number">3.</span> <span class="toc-text">Git工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">3.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%88%86%E6%94%AF"><span class="toc-number">3.2.</span> <span class="toc-text">版本分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%AF%B9%E6%AF%94%E5%8F%8A%E8%BF%98%E5%8E%9F"><span class="toc-number">3.3.</span> <span class="toc-text">版本对比及还原</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E6%BC%94%E7%BB%83"><span class="toc-number">4.</span> <span class="toc-text">实战演练</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-amp-%E6%8F%90%E4%BA%A4"><span class="toc-number">4.1.</span> <span class="toc-text">创建&amp;提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%B7%AE%E5%BC%82%E5%8C%96%E5%AF%B9%E6%AF%94"><span class="toc-number">4.2.</span> <span class="toc-text">版本差异化对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E8%BF%98%E5%8E%9F"><span class="toc-number">4.3.</span> <span class="toc-text">版本还原</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-number">4.4.</span> <span class="toc-text">新建分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E6%96%87%E4%BB%B6"><span class="toc-number">4.5.</span> <span class="toc-text">切换与使用分支管理文件</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2014 - 2022 By 洛森</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script></div></body></html>
